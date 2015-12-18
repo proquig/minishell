@@ -1,0 +1,9 @@
+total 96
+-rw-rw-r-- 1 proqui_g proqui_g     0 déc.  18 16:48 cat
+-rw-rw-r-- 1 proqui_g proqui_g     0 déc.  18 16:48 cat1
+drwxrwxr-x 2 proqui_g proqui_g  4096 déc.  18 16:20 include
+drwxrwxr-x 2 proqui_g proqui_g  4096 déc.  15 09:25 lib
+-rw-rw-r-- 1 proqui_g proqui_g   761 déc.  18 16:20 Makefile
+-rw-rw-r-- 1 proqui_g proqui_g   745 déc.  16 12:03 Makefile~
+-rwxrwxr-x 1 proqui_g proqui_g 28657 déc.  18 16:24 mysh
+drwxrwxr-x 2 proqui_g proqui_g 12288 déc.  18 16:24 src
