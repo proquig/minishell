@@ -5,7 +5,7 @@
 ** Login   <proqui_g@epitech.net>
 ** 
 ** Started on  Tue Dec 15 23:20:28 2015 Guillaume PROQUIN
-** Last update Sun Dec 20 18:17:11 2015 Guillaume PROQUIN
+** Last update Sun Dec 20 18:33:29 2015 Guillaume PROQUIN
 */
 
 #include "mysh.h"
@@ -17,12 +17,8 @@ void		sig_prompt()
 
 void		select_exec(char *cmd, t_sh *sh)
 {
-  char		**args;
   char		**cmds;
-  char		*del;
-  int		i;
 
-  i = -1;
   cmds = get_cmds(cmd, PIPE_DEL);
   signal(SIGINT, sig_prompt);
   if (cmds[1])
