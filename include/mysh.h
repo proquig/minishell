@@ -5,7 +5,7 @@
 ** Login   <proqui_g@epitech.net>
 ** 
 ** Started on  Mon Nov 30 09:36:10 2015 Guillaume PROQUIN
-** Last update Fri Dec 18 16:19:48 2015 Guillaume PROQUIN
+** Last update Sun Dec 20 18:15:29 2015 Guillaume PROQUIN
 */
 
 #ifndef		__MY_SH__
@@ -18,6 +18,7 @@
 # include	<unistd.h>
 # include	<stdarg.h>
 # include	<signal.h>
+# include	<fcntl.h>
 # include	"get_next_line.h"
 # include	"my.h"
 # include	"my_printf.h"
@@ -38,10 +39,10 @@
 # define	DRDIR_DEL	">>"
 # define	DLDIR_DEL	"<<"
 
-typedef struct s_builtin	t_builtin;
-typedef struct s_env		t_env;
-typedef struct s_param		t_param;
-typedef struct s_sh		t_sh;
+typedef struct	s_builtin	t_builtin;
+typedef struct	s_env		t_env;
+typedef struct	s_param		t_param;
+typedef struct	s_sh		t_sh;
 
 typedef struct	s_builtin
 {
@@ -65,6 +66,12 @@ typedef struct	s_sh
   char		*old_pwd;
 
 }		t_sh;
+
+typedef struct	s_exec
+{
+  char		*del;
+  void		(*f)(char **av, t_sh *sh);
+}		t_exec;
 
 t_sh		*fn_cd(char *cmd, t_sh *sh);
 t_sh		*fn_setenv(char *cmd, t_sh *sh);
@@ -105,5 +112,10 @@ int		parse_input(char *cmd, t_sh *sh);
 pid_t		check_fork();
 void		pipe_child(int pipefd[2], int fd, char **av, t_sh *sh);
 void		fn_pipe(char **av, t_sh *sh);
+
+void		fn_rdir(char *cmd, t_sh *sh);
+
+void		my_get_exec_cmds(char *cmd, t_sh *sh);
+void		select_exec(char *cmd, t_sh *sh);
 
 #endif

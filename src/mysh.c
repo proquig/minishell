@@ -5,15 +5,7 @@
 ** Login   <proqui_g@epitech.net>
 ** 
 ** Started on  Tue Nov 24 08:50:07 2015 Guillaume PROQUIN
-** Last update Fri Dec 18 16:08:28 2015 Guillaume PROQUIN
-*/
-
-/*
-TODO:
- - my_fprintf
- - check between double quotes cmds
- - norm pipe etc
- - norm cast edit
+** Last update Sun Dec 20 18:20:30 2015 Guillaume PROQUIN
 */
 
 #include "mysh.h"
