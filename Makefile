@@ -5,7 +5,7 @@
 ## Login   <proqui_g@epitech.net>
 ## 
 ## Started on  Tue Nov 24 08:48:28 2015 Guillaume PROQUIN
-## Last update Sun Dec 20 18:20:42 2015 Guillaume PROQUIN
+## Last update Mon Dec 21 20:04:49 2015 Guillaume PROQUIN
 ##
 
 NAME		= mysh
@@ -19,7 +19,8 @@ SRCS		= src/mysh.c		\
 		src/parser.c		\
 		src/pipe.c		\
 		src/exec.c		\
-		src/path.c
+		src/path.c		\
+		src/redir.c
 
 OBJS		= $(SRCS:.c=.o)
 

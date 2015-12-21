@@ -5,7 +5,7 @@
 ** Login   <proqui_g@epitech.net>
 ** 
 ** Started on  Mon Nov 30 09:36:10 2015 Guillaume PROQUIN
-** Last update Mon Dec 21 18:06:14 2015 Guillaume PROQUIN
+** Last update Mon Dec 21 20:12:01 2015 Guillaume PROQUIN
 */
 
 #ifndef		__MY_SH__
@@ -109,12 +109,16 @@ int		count_cmds(char *line, char *dels);
 char		**get_cmds(char *str, char *dels);
 int		parse_input(char *cmd, t_sh *sh);
 
+void		kill_child();
 pid_t		check_fork();
 void		pipe_child(int pipefd[2], int fd, char **av, t_sh *sh);
 void		fn_pipe(char **av, t_sh *sh, int filefd);
 
 void		fn_rdir(char **av, t_sh *sh, int filefd);
 
+void		sig_prompt();
+int		find_fn(char *cmd, char *del);
+int		check_exec(char *cmd, t_exec *exec);
 void		select_exec(char *cmd, t_sh *sh);
 
 #endif
