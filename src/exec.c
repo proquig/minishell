@@ -5,7 +5,7 @@
 ** Login   <proqui_g@epitech.net>
 ** 
 ** Started on  Tue Dec 15 23:20:28 2015 Guillaume PROQUIN
-** Last update Mon Dec 21 19:50:43 2015 Guillaume PROQUIN
+** Last update Mon Dec 21 20:31:20 2015 Guillaume PROQUIN
 */
 
 #include "mysh.h"
@@ -68,7 +68,7 @@ void		select_exec(char *cmd, t_sh *sh)
     {DRDIR_DEL, &fn_rdir},
     {DLDIR_DEL, &fn_rdir},
     {RDIR_DEL, &fn_rdir},
-    {DLDIR_DEL, &fn_rdir},
+    {LDIR_DEL, &fn_ldir},
     {PIPE_DEL, &fn_pipe},
     {NULL, NULL}
   };

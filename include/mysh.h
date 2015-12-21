@@ -5,7 +5,7 @@
 ** Login   <proqui_g@epitech.net>
 ** 
 ** Started on  Mon Nov 30 09:36:10 2015 Guillaume PROQUIN
-** Last update Mon Dec 21 20:12:01 2015 Guillaume PROQUIN
+** Last update Mon Dec 21 20:31:56 2015 Guillaume PROQUIN
 */
 
 #ifndef		__MY_SH__
@@ -115,6 +115,7 @@ void		pipe_child(int pipefd[2], int fd, char **av, t_sh *sh);
 void		fn_pipe(char **av, t_sh *sh, int filefd);
 
 void		fn_rdir(char **av, t_sh *sh, int filefd);
+void		fn_ldir(char **av, t_sh *sh, int filefd);
 
 void		sig_prompt();
 int		find_fn(char *cmd, char *del);
