@@ -5,7 +5,7 @@
 ** Login   <proqui_g@epitech.net>
 ** 
 ** Started on  Mon Nov 30 09:36:10 2015 Guillaume PROQUIN
-** Last update Sun Dec 20 18:15:29 2015 Guillaume PROQUIN
+** Last update Mon Dec 21 18:06:14 2015 Guillaume PROQUIN
 */
 
 #ifndef		__MY_SH__
@@ -70,7 +70,7 @@ typedef struct	s_sh
 typedef struct	s_exec
 {
   char		*del;
-  void		(*f)(char **av, t_sh *sh);
+  void		(*f)(char **av, t_sh *sh, int filefd);
 }		t_exec;
 
 t_sh		*fn_cd(char *cmd, t_sh *sh);
@@ -111,11 +111,10 @@ int		parse_input(char *cmd, t_sh *sh);
 
 pid_t		check_fork();
 void		pipe_child(int pipefd[2], int fd, char **av, t_sh *sh);
-void		fn_pipe(char **av, t_sh *sh);
+void		fn_pipe(char **av, t_sh *sh, int filefd);
 
-void		fn_rdir(char *cmd, t_sh *sh);
+void		fn_rdir(char **av, t_sh *sh, int filefd);
 
-void		my_get_exec_cmds(char *cmd, t_sh *sh);
 void		select_exec(char *cmd, t_sh *sh);
 
 #endif
