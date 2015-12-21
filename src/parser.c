@@ -5,7 +5,7 @@
 ** Login   <proqui_g@epitech.net>
 ** 
 ** Started on  Tue Dec 15 22:53:15 2015 Guillaume PROQUIN
-** Last update Fri Dec 18 10:12:15 2015 Guillaume PROQUIN
+** Last update Mon Dec 21 23:02:06 2015 Guillaume PROQUIN
 */
 
 #include "mysh.h"
@@ -69,12 +69,13 @@ int		parse_input(char *cmd, t_sh *sh)
 
   i = -1;
   cmds = get_cmds(cmd, END_DEL);
-  if (cmds[1])
-    {
-      while (cmds[++i])
-	select_exec(cmds[i], sh);
-      free(cmds);
-    }
-  else
-    select_exec(cmd, sh);
+  if (cmds[0])
+    if (cmds[1])
+      {
+	while (cmds[++i])
+	  select_exec(cmds[i], sh);
+	free(cmds);
+      }
+    else
+      select_exec(cmd, sh);
 }
