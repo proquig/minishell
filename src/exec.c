@@ -5,7 +5,7 @@
 ** Login   <proqui_g@epitech.net>
 ** 
 ** Started on  Tue Dec 15 23:20:28 2015 Guillaume PROQUIN
-** Last update Mon Dec 21 20:31:20 2015 Guillaume PROQUIN
+** Last update Mon Dec 21 22:38:55 2015 Guillaume PROQUIN
 */
 
 #include "mysh.h"
@@ -46,12 +46,14 @@ int		check_exec(char *cmd, t_exec *exec)
   check = 1;
   i = -1;
   j = -1;
-  if (!args)
+  if (!args || !args[0])
     check = 0;
   while (check && args[++i]);
   while (check && exec[++j].del)
     if (args[i - 1][0] == exec[j].del[0] \
 	|| args[i - 1][my_strlen(args[i - 1]) - 1] == exec[j].del[0])
+      check = 0;
+    else if (find_fn(cmd, exec[j].del) && count_cmds(cmd, exec[j].del) < 2)
       check = 0;
   if (!check && exec[j + 1].del)
     my_fprintf(2, "Missing name for redirect.\n");
@@ -76,7 +78,7 @@ void		select_exec(char *cmd, t_sh *sh)
   i = -1;
   signal(SIGINT, sig_prompt);
   while (exec[++i].del && !find_fn(cmd, exec[i].del));
-  if (check_exec(cmd, exec))
+  if (count_cmds(cmd, " \t") && check_exec(cmd, exec))
     if (exec[i].del)
       {
 	args = get_cmds(cmd, exec[i].del);
